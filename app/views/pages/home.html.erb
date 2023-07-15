@@ -1,2 +1,41 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="hero">
+  <div class="main-width">
+    <header>
+      <div class="logo">
+        <h2><a href="#">Moment</a></h2>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><%= link_to "Profile", "users"%></li>
+          <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="content">
+      <div class="main-text">
+        <h6>Voted</h6>
+        <h3>Most Popular</h3>
+        <h1>Posts</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam obcaecati recusandae sapiente rerum eveniet et
+          sunt, quaerat consectetur ut odio. Numquam temporibus voluptates ea quibusdam facilis eligendi optio
+          accusantium dolorem!</p>
+        <a href="#">Go to this post</a>
+        <a href="#" class="cta"><i class="fa-solid fa-arrow-right"></i>See it</a>
+      </div>
+
+      <div class="social">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+      </div>
+
+      <div class="image">
+        <img src="assets/anime.png">
+      </div>
+    </div>
+  </div>
+</section>
