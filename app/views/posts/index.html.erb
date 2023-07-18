@@ -1,9 +1,8 @@
 <h1>Posts</h1>
 
 <ul>
-  <% @posts.each do |post| %>
-  <li><%= image_tag @post.photo %></li>
-  <li><%= image_tag @post.photo %></li>
+  <% @posts.each do |photo| %>
+  <%= cl_image_tag photo.key %>
   <% end %>
 </ul>
 
@@ -12,3 +11,4 @@
 <%= link_to "Post", posts_new_path %>
 <br>
 <%= link_to "Home", root_path %>
+</div>

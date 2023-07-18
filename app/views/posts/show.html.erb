@@ -1,5 +1,5 @@
-<h1>Post <%= image_tag @post.description %> </h1>
-          <%= image_tag @post.photo %>
+<h1>Post <%= @post.description %> </h1>
+          <%= cl_image_tag @post.photo.key %>
 
 
 
