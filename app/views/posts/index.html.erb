@@ -1,14 +1,10 @@
-<h1>Posts</h1>
 
-<ul>
-  <% @posts.each do |photo| %>
-  <%= cl_image_tag photo.key %>
-  <% end %>
-</ul>
-
-<br>
-
-<%= link_to "Post", posts_new_path %>
-<br>
-<%= link_to "Home", root_path %>
-</div>
+  <h1>Posts</h1>
+  <ul>
+    <% @posts.each do |photo| %>
+    <%= cl_image_tag('r66rxywwqooq05qnouq9iip1pl0e') %>
+    <% end %>
+  </ul>
+  <%= link_to "Post", new_post_path %>
+  <%= link_to "Home", root_path %>
+  </div>

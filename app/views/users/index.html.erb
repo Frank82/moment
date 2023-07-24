@@ -1,54 +1,56 @@
-  <body>
-    <div class="header__wrapper">
-      <header></header>
-      <div class="cols__container">
-        <div class="left__col">
-          <div class="img__container">
-            <img src="assets/joe.jpeg" alt="Joe" />
-            <span></span>
-          </div>
-          <h2>Joe Joe</h2>
-          <p>UX/UI Designer</p>
-          <p>joe@joe.com</p>
-
-          <ul class="about">
-            <li><span>4,073</span>Up</li>
-            <li><span>322</span>Down</li>
-            <li><span>200,543</span>Total</li>
-          </ul>
-
-          <div class="content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
-              erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
-              ligula egestas nulla.
-            </p>
-
-            <ul>
-              <li><i class="fab fa-facebook"></i></li>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter"></i>
-            </ul>
-          </div>
+<header>
+  <div class="container">
+    <div class="user-left">
+      <div class="user-profile">
+        <div class="user-profile-photo">
+          <img src="assets/joe1.jpeg" />
         </div>
-        <div class="right__col">
-          <nav>
-            <ul>
-              <li><a href="\">Home</a></li>
-              <li><a href="">Photos</a></li>
-            </ul>
-            <button><%= link_to "Post", posts_new_path %></button>
-          </nav>
+        <h2><%= current_user.first_name %></h2>
+        <h3><%= current_user.last_name %></h3>
+        <p>UX/UI Designer</p>
+        <p>joe@joe.com</p>
 
-          <div class="photos">
-            <img src="assets/img1.jpg" alt="Photo" />
-            <img src="assets/img2.jpg" alt="Photo" />
-            <img src="assets/img3.jpg" alt="Photo" />
-            <img src="assets/img4.jpg" alt="Photo" />
-            <img src="assets/img5.jpg" alt="Photo" />
-            <img src="assets/img6.jpg" alt="Photo" />
-          </div>
+        <ul class="about">
+          <li><span>Up</span>10</li>
+          <li><span>Down</span>2</li>
+          <li><span>Total</span>12</li>
+        </ul>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
+            erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
+            ligula egestas nulla.
+          </p>
+          <ul>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-twitter"></i></li>
+          </ul>
         </div>
       </div>
     </div>
-  </body>
+
+    <div class="middle">
+      <div class="photos">
+        <img src="assets/img1.jpg" />
+      </div>
+      <div class="photos">
+        <img src="assets/img3.jpg" />
+      </div>
+      <div class="photos">
+        <img src="assets/img5.jpg" />
+      </div>
+      <div class="photos">
+        <img src="assets/img6.jpg" />
+      </div>
+    </div>
+
+    <div class="user-right">
+      <ul>
+        <li><a href="\">Home</a></li>
+        <li><a href="">Photos</a></li>
+        <%= link_to "Post", new_post_path %>
+      </ul>
+    </div>
+  </div>
+</header>

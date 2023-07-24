@@ -1,10 +1,16 @@
 // Define variables for your color scheme
-
-// For example:
 $red: #FD1015;
 $blue: #0D6EFD;
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
-$light-gray: #F4F4F4;
+$color-white: hsl(252, 30%, 100%);
+$color-light: hsl(252, 30%, 95%);
+$color-gray: hsl(252, 15%, 65%);
+$color-primary: hsl(252, 75%, 60%);
+$color-secondary: hsl(252, 100%, 90%);
+$color-success: hsl(120, 95%, 65%);
+$color-danger: hsl(0, 95%, 65%);
+$color-black: hsl(252, 30%, 17%);
+$color-dark: hsl(252, 30%, 17%);

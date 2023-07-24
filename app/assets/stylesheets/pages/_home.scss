@@ -1,173 +1,346 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita&family=Bruno+Ace&family=Courgette&family=Permanent+Marker&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-* {
-  padding: 0;
+
+*, *::before, *::after {
   margin: 0;
+  padding: 0;
+  outline: 0;
   box-sizing: border-box;
-  font-family: 'Meighan Script', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  border: none;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
+  color: $color-dark;
+  background: $color-light;
   overflow-x: hidden;
 }
 
-.main-width {
-  width: 1400px;
-  max-width: 95%;
-  margin: 0 auto;
+main {
+  position: relative;
+  top: 5.4rem;
 }
 
-.hero {
-  height: 100%;
-  width: 100%;
-  min-height: 100vh;
-  background: radial-gradient(#81a661,30%, #413833);
+main .container {
+  display: grid;
+  grid-template-columns: 18vw auto 20vw;
+  column-gap: 2rem;
   position: relative;
 }
 
-.hero header .logo h2 a {
-  display: block;
-  font-size: 32px;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
+/*====================LEFT==================*/
+main .container .left {
+  height: max-content;
+  position: sticky;
+  top: $sticky-top-left;
 }
 
-.hero header {
+main .container .left .profile {
+  padding: $card-padding;
+  background: $color-white;
+  border-radius: $card-border-radius;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  width: 100%;
+}
+
+/*============SIDEBAR======================*/
+.left .sidebar {
+  margin-top: 1rem;
+  background: $color-white;
+  border-radius: $card-border-radius;
+}
+
+.left .sidebar .menu-item {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  position: relative;
+}
+
+.left .sidebar .menu-item:hover {
+  background: $color-light;
+}
+
+.left .sidebar i {
+  font-size: 1.4rem;
+  color: $color-gray;
+  margin-left: 2rem;
+  position: relative;
+}
+
+.left .sidebar i .notification-count {
+  background: $color-danger;
+  color: white;
+  font-size: 0.7rem;
+  width: fit-content;
+  border-radius: 0.8rem;
+  padding: 0.1rem 0.4rem;
+  position: absolute;
+  top: -0.2rem;
+  right: -0.3rem;
+}
+
+.left .sidebar h3 {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+
+.left .sidebar .active {
+  background: $color-light;
+}
+
+.left .sidebar .active i,
+.left .sidebar .active h3 {
+  color: $color-primary;
+}
+
+.left .sidebar .active::before {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 100%;
+  position: absolute;
+  background: $color-primary;
+}
+
+.left .sidebar .menu-item:first-child.active {
+  border-top-left-radius: $card-border-radius;
+  overflow: hidden;
+}
+
+.left .sidebar .menu-item:last-child.active {
+  border-bottom-left-radius: $card-border-radius;
+  overflow: hidden;
+}
+
+.left .btn {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/*================POPUP=============*/
+.left .notifications-popup {
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 30rem;
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  box-shadow: 0 0 2rem hsl $color-primary, 75%, 60% 25%;
+  z-index: 8;
+  display: none;
+}
+
+.left .notifications-popup::before {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  background: $color-white;
+  position: absolute;
+  left: -0.6rem;
+  transform: rotate(45deg);
+}
+
+.left .notifications-popup > div {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.left .notifications-popup small {
+  display: block;
+}
+
+/*============================= CREATE POST ==========================*/
+.middle .create-post {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 0 30px;
+  margin-top: 1rem;
+  background: $color-white;
+  padding: 0.4rem $card-padding;
+  border-radius: $card-border-radius;
 }
 
-nav ul li {
-  list-style: none;
-  display: inline-block;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  margin-left: 60px;
-  font-size: 15px;
-  font-weight: 600;
-  border-bottom: 2px solid transparent;
-  transition: .4s;
-}
-
-nav ul li a:not(:last-child) a:hover,
-nav ul li a:not(:last-child) a:focus {
-  border-bottom: 2px solid white;
-}
-
-.content {
-  padding-top: 140px;
-}
-
-.content .main-text {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 50px;
-}
-
-.content .main-text h6 {
-  font-size: 14px;
-  font-weight: 400;
-  color: white;
-  margin-bottom: 40px;
-}
-
-.content .main-text h1 {
-  font-size: 100px;
-  line-height: 1;
-  color: white;
-  margin: 0px 0px 45px;
-  font-family: 'Meighan Script', cursive;
-}
-
-.content .main-text h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: white;
-}
-
-.content .main-text p {
-  max-width: 100%;
-  width: 480px;
-  color: white;
-  line-height: 1.8;
-  font-size: 15px;
-  margin-bottom: 50px;
-}
-
-.content .main-text a {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  background: white;
-  border: 1px solid white;
-  padding: 9px 25px;
-  line-height: 1.4;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.content .main-text a:hover {
-  transform: scale(1.2);
-  border: 1px solid #81a661;
-  background: transparent;
-  color: white;
-  transition: .4s;
-}
-
-.content .main-text a.cta {
-  border: 1px solid #81a661;
-  color: white;
-  background: transparent;
-  margin-left: 20px;
-}
-
-.content .main-text a.cta i {
-  margin-right: 12px;
-}
-
-.content .main-text a.cta:hover {
-  color: black;
-  background: white;
-  border: 1px solid white;
-  transition: .4s;
-}
-
-.content .social {
-  position: relative;
-  z-index: 2;
-  margin-top: 200px;
-  padding-bottom: 40px;
-}
-
-.content .social a {
-  display: inline-block;
-  color: #81a661;
-  margin-right: 25px;
-  font-size: 24px;
-}
-
-.content .social a:hover {
-  transform: scale(1.2);
-  transition: .4s;
-  color: white;
-}
-
-.image {
-  position: absolute;
+.middle .create-post input[type="text"] {
+  justify-self: start;
   width: 100%;
-  height: 90%;
-  bottom: 0;
-  right: 0;
-  text-align: right;
+  padding-left: 1rem;
+  background: transparent;
+  color: $color-dark;
+  margin-right: 1rem;
 }
 
-.image img {
-  height: 100%;
+/*============================= FEEDS  ==========================*/
+
+.middle .feeds .feed {
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.middle .feed .head {
+  display: flex;
+  justify-content: space-between;
+}
+.middle .feed .user {
+  display: flex;
+  gap: 1rem;
+}
+
+.middle .feed .photo {
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  margin: 0.7rem 0;
+}
+
+.middle .feed .action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
+
+.middle .approved-by {
+  display: flex;
+}
+
+.middle .approved-by span {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid $color-white;
+  margin-left: -0.6rem;
+}
+
+.middle .approved-by span:first-child {
+  margin: 0;
+}
+
+.middle .approved-by p {
+  margin-left: 0.5rem;
+}
+
+/*============================= RIGHT ==========================*/
+main .container .right {
+  height: max-content;
+  position: sticky;
+  top: $sticky-top-right;
+  bottom: 0;
+}
+
+/*============================= REQUESTS ==========================*/
+.right .friend-requests {
+  margin-top: 1rem;
+}
+
+.right .friend-requests h4 {
+  color: $color-gray;
+  margin: 1rem 0;
+}
+
+.right .request {
+  background: $color-white;
+  padding: $card-padding;
+  border-radius: $card-border-radius;
+  margin-bottom: 0.7rem;
+}
+
+.right .request .info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+
+.right .request .action {
+  display: flex;
+  gap: 1rem;
+}
+
+/*============================= MEDIA QUERIES ==========================*/
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 96%;
+  }
+
+  main .container {
+    grid-template-columns: 5rem auto 30vw;
+    gap: 1rem;
+  }
+
+  .left {
+    width: 5rem;
+    z-index: 5;
+  }
+
+  main .container .left .profile {
+    display: none;
+  }
+
+  .sidebar h3 {
+    display: none;
+  }
+
+  .left .btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .search-bar {
+    display: none;
+  }
+
+  main .container {
+    grid-template-columns: 0 auto 5rem;
+    gap: 0;
+  }
+
+  main .container .left {
+    grid-column: 3/4;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
+  .left .notifications-popup {
+    position: absolute;
+    left: -20rem;
+    width: 20rem;
+  }
+
+  .left .notifications-popup::before {
+    display: absolute;
+    top: 1.3rem;
+    left: calc(20rem - 0.6rem);
+    display: block;
+  }
+
+  main .container .middle {
+    grid-column: 1/3;
+  }
+
+  main .container .right {
+    display: none;
+  }
 }
